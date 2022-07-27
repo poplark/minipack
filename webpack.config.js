@@ -1,4 +1,5 @@
 const path = require('path');
+const MyPlugin = require('./plugin/my-plugin');
 
 module.exports = {
   mode: 'none',
@@ -6,5 +7,10 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.join(__dirname, 'dist')
-  }
+  },
+  plugins: [
+    new MyPlugin({
+      name: 'maomao'
+    })
+  ]
 }
